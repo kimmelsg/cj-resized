@@ -14,7 +14,7 @@ npm install react-resized --save
 import Media from 'react-resized'
 
 const Test = props => (
-  <img src={media} />
+  <img src={props.media} />
 )
 
 export default Media(Test)(
