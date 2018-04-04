@@ -23,7 +23,7 @@ export default component => values =>
 
       this.timeout = setTimeout(
         () => this.setState({ width: window.innerWidth }),
-        500
+        50
       );
     }
 
