@@ -23,7 +23,7 @@ export default component => values =>
 
       this.timeout = setTimeout(
         () => this.setState({ width: window.innerWidth }),
-        50
+        50,
       );
     }
 
@@ -34,16 +34,13 @@ export default component => values =>
       if (Array.isArray(realValues)) {
         realValues = realValues.reduce(
           (acc, value, index) => ({ ...acc, [defaultKeys[index]]: value }),
-          {}
+          {},
         );
       }
 
-      return realValues[
-        Object.keys(realValues)
-          .map(value => parseInt(value, 10))
-          .sort((a, b) => Math.abs(width - a) - Math.abs(width - b))
-          .sort(a => width < a)[0]
-      ];
+      let numbers = Object.keys(realValues).map(value => parseInt(value, 10));
+
+      return realValues[Math.max.apply(null, numbers.filter(v => v <= width))];
     }
 
     render() {

@@ -1,6 +1,6 @@
 {
   "name": "react-resized",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Return values based on browser width",
   "main": "dist/index.js",
   "directories": {
